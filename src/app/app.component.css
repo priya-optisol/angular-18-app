@@ -1,0 +1,17 @@
+.login-div a{
+    text-decoration: none;
+    width: 120px;
+    height: 20px;
+    padding: 2px;
+}
+.login-div a:hover{
+    background-color: rgb(243, 228, 228);
+}
+.login-div{
+    float: right;
+    width: 100px;
+}
+.login-div{
+    display: flex;
+    justify-content: space-between;
+}
