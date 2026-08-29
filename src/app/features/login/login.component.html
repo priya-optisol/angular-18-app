@@ -1,8 +1,8 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     <h3>Login</h3>
-    <input formControlName="email" placeholder="Email">
-    @if(form.controls.email.touched && form.controls.email.invalid){
-        <small>Enter a valid email</small>
+    <input formControlName="username" placeholder="Username">
+    @if(form.controls.username.touched && form.controls.username.invalid){
+        <small>Enter a valid username</small>
     }
     <input formControlName="password" placeholder="Password" type="password">
     @if(form.controls.password.touched && form.controls.password.invalid){

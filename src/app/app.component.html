@@ -5,7 +5,11 @@
     </div>
     <div class="login-div">
       <a href="#" routerLink="/">Home</a>
-      <a href="#" routerLink="/login">Login</a>
+      @if(userLoggedIn){
+      <a href="#" (click)="logout()">Logout</a>
+      }@else{
+      <a href="#" userLoggedIn routerLink="/login">Login</a>
+      }
     </div>
   </div>
 </header>

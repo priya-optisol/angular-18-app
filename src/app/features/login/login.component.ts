@@ -16,7 +16,9 @@ export class LoginComponent {
   submitting = signal(false);
 
   form = this.fb.nonNullable.group({
-    email: ['', [Validators.required, Validators.email]],
+    // email: ['', [Validators.required, Validators.email]],
+    username: ['', [Validators.required]],
+
     password: ['', [Validators.required]],
   });
 
@@ -26,9 +28,9 @@ export class LoginComponent {
     this.submitting.set(true);
     console.log(this.form);
     console.log(this.form.getRawValue());
-    const { email, password } = this.form.getRawValue();
-    this.auth.login(email, password).subscribe({
-      next: () => this.router.navigate(['/employees']),
+    const { username, password } = this.form.getRawValue();
+    this.auth.login(username, password).subscribe({
+      next: () => this.router.navigate(['/employee']),
       error: () => this.submitting.set(false),
     })
   }

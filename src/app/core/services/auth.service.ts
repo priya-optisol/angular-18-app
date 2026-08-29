@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs';
 import { APP_CONFIG } from '../../app.config'
 
-export interface User { id: String, name: String, role: 'ADMIN' | 'USER' }
+export interface User { id: string, email: string, firstName: string, image: string, username: string, lastName: string, gender: string, refreshToken: string, role: 'ADMIN' | 'USER', accessToken: string }
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +18,14 @@ export class AuthService {
   token = this._token.asReadonly();
   isLoggedIn = computed(() => !!this._token());
 
- config = inject(APP_CONFIG);
-  login(email: string, password: string) {
+  config = inject(APP_CONFIG);
+  login(username: string, password: string) {
     console.log(`${this.config.apiPrefix}/auth/login`);
-    return this.http.post<{ token: string, user: User }>(`${this.config.apiPrefix}/auth/login`, { "username":email, "password":password }).pipe(
+    return this.http.post<User>(`${this.config.apiPrefix}/auth/login`, { "username": username, "password": password }).pipe(
       tap((res) => {
-        this._token.set(res.token);
-        this._user.set(res.user);
-        localStorage.setItem("token", res.token);
+        this._token.set(res.accessToken);
+        this._user.set(res);
+        localStorage.setItem("token", res.accessToken);
       })
     );
   }
