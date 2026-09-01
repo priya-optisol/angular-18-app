@@ -6,6 +6,8 @@
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f8fafc;
-    height: auto;
+    margin: 0;
+    height: 100vh;
+    /* overflow: hidden; */
 
 }

@@ -1,6 +1,7 @@
 .container{
     display: flex;
     justify-content: space-between;
+    margin: 10px;
 }
 .login-div a{
     text-decoration: none;
@@ -11,10 +12,7 @@
 .login-div a:hover{
     background-color: rgb(243, 228, 228);
 }
-/* .login-div{
-    float: right;
-    width: 100px;
-} */
+
 .login-div{
     display: flex;
     justify-content: space-between;
