@@ -1,1 +1,15 @@
-<p>employees works!</p>
+<div class="emp-container">
+    <h2>Employees List</h2>
+    <div class="empList">
+        <cdk-virtual-scroll-viewport itemSize="140" class="scroll-viewport"
+            (scrolledIndexChange)="onScrollIndexChange($event)">
+            <div class="emp-card" *cdkVirtualFor="let employee of employees" >
+            <app-employee-card [employee]="employee" (select)="onEmployeeSelected($event)"
+                (remove)="onEmployeeRemoved($event)"></app-employee-card>
+           </div>
+             @if (loading) {
+    <div class="loader">Loading more items...</div>
+  }
+        </cdk-virtual-scroll-viewport>
+    </div>
+</div>

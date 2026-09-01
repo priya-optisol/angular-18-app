@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="emp">
+        <div class="emp-name">{{employee.firstName}} {{employee.lastName}}</div>
+        <div>{{employee.company.title}}</div>
+        <div class="emp-details">{{employee.phone}}</div>
+        <div class="emp-details">{{employee.role}}</div>
+        <div class="emp-details">{{employee.address.country}}</div>
+
+    </div>
+        <div class="emp">
+        <div class="emp-details">{{employee.gender}}</div>
+        <div class="emp-details">{{employee.email}}</div>
+        
+        <div class="emp-details">{{employee.birthDate}}</div>
+        <div class="emp-details">{{employee.bloodGroup}}</div>
+    </div>
+    <div class="emp">
+        <div class="emp-details">{{employee.university}}</div>
+        <div class="emp-details">{{employee.ein}}</div>
+        <div class="emp-details">{{employee.userAgent}}</div>
+    </div>
+    
+    <div><img src="{{employee.image}}"></div>
+</div>

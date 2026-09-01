@@ -1,8 +1,11 @@
 @import url('https://googleapis.com');
+@import 'ngx-toastr/toastr';
+
 
 /* 2. Assign it to elements */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #d3e3fd;
+    background-color: #f8fafc;
+    height: auto;
 
 }

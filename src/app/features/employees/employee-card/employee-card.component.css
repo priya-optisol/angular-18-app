@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(225, 223, 223);
+    /* max-width: 500px; */
+    /* width: 310px; */
+    background-color: #f0fdf4 (158, 177, 71);
+    /* color: #14532d ; */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.emp {
+    display: flex;
+    flex-direction: column;
+
+}
+.emp-name{
+    font-weight: bold;
+}
+.emp-details{
+    font-style: italic;
+}

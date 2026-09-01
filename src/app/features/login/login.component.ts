@@ -2,6 +2,8 @@ import { Component, inject, signal } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -13,6 +15,7 @@ export class LoginComponent {
   private auth = inject(AuthService);
   private fb = inject(FormBuilder);
   private router = inject(Router);
+  private toastr = inject(ToastrService);
   submitting = signal(false);
 
   form = this.fb.nonNullable.group({
@@ -30,8 +33,18 @@ export class LoginComponent {
     console.log(this.form.getRawValue());
     const { username, password } = this.form.getRawValue();
     this.auth.login(username, password).subscribe({
-      next: () => this.router.navigate(['/employee']),
-      error: () => this.submitting.set(false),
+      next: () => {
+        this.toastr.success('Logged In!', '');
+        if(this.auth.hasRole("admin"))
+          this.router.navigate(['/employees'])
+        else
+          this.router.navigate(['/products'])
+
+      },
+      error: () =>{
+        this.toastr.error('Invalid Credential!', '');
+        this.submitting.set(false)
+      } 
     })
   }
 }

@@ -1,0 +1,51 @@
+.prod-card {
+    margin: 5px;
+    padding: 16px;
+    border-radius: 10px;
+    border: 2px solid gray;
+    width: 300px;
+    /* background-color: rgb(219, 141, 154); */
+    font-style: italic;
+}
+
+.prod-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+
+.prod-title {
+    font-weight: bold;
+}
+
+.stars {
+    color: #facf63;
+    /* Modern amber/gold star color */
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+}
+
+.final-price {
+    color: whitesmoke;
+    margin-left: 10px;
+}
+
+.discount {
+    background-color: #facf63;
+    border-radius: 73px;
+    border: 2px solid #d5bcbc;
+    height: 45px;
+    width: 64px;
+    float: right;
+    padding: 2px;
+    padding-left: 9px;
+}
+.discount span{
+    font-size: small;
+}

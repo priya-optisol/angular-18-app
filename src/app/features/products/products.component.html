@@ -1,0 +1,20 @@
+@if(products()){
+<div class="prod-container">
+@for(prod of productsWithSavings(); track prod.id){
+    <div class="prod-card">
+        <div class="prod-title">{{prod.title}}</div>
+        <div class="discount"><span>Discount</span> {{prod.discountPercentage}}%</div>
+
+        <div class="price">
+        <div appStrikethrough>Price ₹{{prod.price}} </div>
+        <div class="final-price">Price ₹{{prod.finalPrice | number:'1.2-2'}}</div>
+        </div>
+        <div>savings ₹{{prod.savings | number:'1.2-2'}}</div>
+        <div class="stars">{{prod.rating|startRating}}</div>
+        <div>Available Stocks - {{prod.stock}}</div>
+    </div>
+}
+</div>
+} @else {
+<p>Loading items...</p>
+}

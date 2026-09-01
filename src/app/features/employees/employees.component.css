@@ -1,0 +1,37 @@
+.emp-container {
+    margin: 10px;
+}
+
+.empList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1800px;
+}
+
+.scroll-viewport {
+    height: 600px;
+    /* Adjust viewport to fit below your application navigation header */
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+    /* Crisp Slate Light Neutral color from previous choice */
+}
+
+/* Reapplying our modern card improvements */
+.emp-card {
+    height: 120px;
+    /* Uniform height ensures itemSize stays perfectly accurate */
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.loader {
+    text-align: center;
+    padding: 15px;
+    font-weight: 500;
+    color: #64748b;
+}

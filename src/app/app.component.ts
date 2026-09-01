@@ -14,11 +14,7 @@ export class AppComponent {
   title = 'clinic-pro';
   router = inject(Router);
   auth = inject(AuthService);
-  userLoggedIn = this.auth.isLoggedIn();
   logout(){
     this.auth.logout()
-    if(!this.userLoggedIn){
-      this.router.navigate(['/login']);
-    }
   }
 }
